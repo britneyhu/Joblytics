@@ -1,11 +1,15 @@
 body {
+    background: #D8EFD3;
+
     width: 600px;
     height: 400px;
+
     margin: 0;
     padding: 0;
-    font-size: 4px;
     border: 0.1rem solid black;
-    background: #D8EFD3;
+
+    font-size: 4px;
+    font-family: Inter;
 }
 
 
@@ -18,13 +22,43 @@ body {
 
 .header {
     background: #F1F8E8;
-    font-family: Inter;
-    font-size: 1rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
+
     padding: 1rem;
     margin: 0;
     border: 0.1rem solid black;
 
+    font-size: 1rem;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+}
+
+.content-title {
+    font-size: 1rem;
+}
+
+.graph {
+    background: white;
+
+    width: 400px;
+    height: 200px;
+
+    border: 0.1rem solid black;
+}
+
+.dropdown {
+    background: #95D2B3;
+
+    width:125px;
+    height: 25px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chevron-down {
+    margin-right: 5px; 
+
+    font-size: 1.5rem;
 }
