@@ -6,6 +6,7 @@ import Graph from './components/Graph';
 import Dropdown from './components/Dropdown';
 import Stats from './components/Stats';
 import AddAppButton from './components/AddAppButton';
+import NavButton from './components/NavButton';
 
 function App() {
   const [graphOption, setGraphOption] = useState("ALL");
@@ -39,7 +40,9 @@ function App() {
       </div>
 
       <div className= "row2">
+        <NavButton text="FORM FILLERS"></NavButton>
         <AddAppButton></AddAppButton>
+        <NavButton text="ALL APPLICATIONS"></NavButton>
       </div>
     </div>
   );
