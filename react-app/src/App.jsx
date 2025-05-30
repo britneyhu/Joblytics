@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Graph from './components/Graph';
 import Dropdown from './components/Dropdown';
 import Stats from './components/Stats';
+import AddAppButton from './components/AddAppButton';
 
 function App() {
   const [graphOption, setGraphOption] = useState("ALL");
@@ -22,21 +23,24 @@ function App() {
     <div className="home-body">
       <Header></Header>
 
-      <div className="row">
+      <div className="row1">
 
-        <div className="col left">
+        <div className="col1">
           
           <div className="content-title">JASON'S ANALYTICS</div>
           <Graph></Graph>
           <Dropdown className="graph-dropdown" options={["ALL", "APPLIED", "RESPONDED", "REJECTED"]} currentOption={graphOption} updateOption={updateGraphOption}></Dropdown>
         </div>
 
-        <div className="col right">
+        <div className="col2">
           <Stats stats={stats}></Stats>
         </div>
 
       </div>
-      
+
+      <div className= "row2">
+        <AddAppButton></AddAppButton>
+      </div>
     </div>
   );
 }

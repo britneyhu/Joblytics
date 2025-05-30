@@ -6,6 +6,7 @@ body {
 
     margin: 0;
     padding: 0;
+    padding-bottom: 10px;
     border: 0.1rem solid black;
 
     font-size: 4px;
@@ -26,17 +27,18 @@ body {
     justify-content: center;
 }
 
-.home-body .row {
+.home-body .row1 {
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 10px;
 
     display: flex;
     flex-direction: row;
     gap: 13px;
 }
 
-.home-body .col.left {
+.home-body .col1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -133,4 +135,26 @@ body {
     list-style: none;
     
     font-size: 0.8rem;
+}
+
+.add-app-button {
+    background: #55AD9B;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 100px;
+}
+
+.plus-sign {
+    font-size: 2rem;
+}
+
+.row2 {
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+
 }
