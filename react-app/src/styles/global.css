@@ -12,14 +12,6 @@ body {
     font-family: Inter;
 }
 
-
-/* .home-body {
-    width: 600px;
-    height: 400px;
-    margin: 0;
-    padding: 0;
-} */
-
 .header {
     background: #F1F8E8;
 
@@ -48,17 +40,50 @@ body {
 }
 
 .dropdown {
+    width:125px;
+    height: 25px;
+
+    font-size: 0.8rem;
+}
+
+.dropdown-button {
     background: #95D2B3;
 
     width:125px;
     height: 25px;
 
+    border: none;
+    margin: 0;
+    padding-left: 5px;
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+
+    
 }
 
 .chevron-down {
     margin-right: 5px; 
+    margin-bottom: 4px;
 
     font-size: 1.5rem;
+}
+
+.dropdown-menu {
+    background: #F1F8E8;
+    
+    margin: 0;
+    padding: 0;
+    line-height: 130%;
+
+    list-style: none;
+}
+
+.dropdown-option {
+    border-bottom: 1px solid black;
+}
+
+.dropdown-option-text {
+    margin-left: 5px;
 }
