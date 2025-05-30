@@ -4,9 +4,11 @@ import './styles/global.css';
 import Header from './components/Header';
 import Graph from './components/Graph';
 import Dropdown from './components/Dropdown';
+import Stats from './components/Stats';
 
 function App() {
   const [graphOption, setGraphOption] = useState("ALL");
+  const [stats, setStats] = useState({"applied": 0, "responded": 0, "rejected": 0, "interviewing": 0, "offer": 0})
 
   const updateGraphOption = (option) =>{
     setGraphOption(option);
@@ -19,9 +21,22 @@ function App() {
   return (
     <div className="home-body">
       <Header></Header>
-      <div className="content-title">JASON'S ANALYTICS</div>
-      <Graph></Graph>
-      <Dropdown className="graph-dropdown" options={["ALL", "APPLIED", "RESPONDED", "REJECTED"]} currentOption={graphOption} updateOption={updateGraphOption}></Dropdown>
+
+      <div className="row">
+
+        <div className="col left">
+          
+          <div className="content-title">JASON'S ANALYTICS</div>
+          <Graph></Graph>
+          <Dropdown className="graph-dropdown" options={["ALL", "APPLIED", "RESPONDED", "REJECTED"]} currentOption={graphOption} updateOption={updateGraphOption}></Dropdown>
+        </div>
+
+        <div className="col right">
+          <Stats stats={stats}></Stats>
+        </div>
+
+      </div>
+      
     </div>
   );
 }
