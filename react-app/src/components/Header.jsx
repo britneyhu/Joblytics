@@ -2,7 +2,7 @@ function Header(){
     
     return(
         <div className="header">
-            Joblytics
+            JOBLYTICS
         </div>
     );
 }

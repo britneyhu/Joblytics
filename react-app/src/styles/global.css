@@ -1,6 +1,30 @@
-.home-body {
+body {
     width: 600px;
     height: 400px;
     margin: 0;
     padding: 0;
+    font-size: 4px;
+    border: 0.1rem solid black;
+    background: #D8EFD3;
+}
+
+
+/* .home-body {
+    width: 600px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+} */
+
+.header {
+    background: #F1F8E8;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+    border: 0.1rem solid black;
+
 }
