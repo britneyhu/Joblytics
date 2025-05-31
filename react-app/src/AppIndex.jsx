@@ -8,12 +8,16 @@ import Stats from './components/Stats';
 import AddAppButton from './components/AddAppButton';
 import NavButton from './components/NavButton';
 
-function App() {
+function AppIndex() {
   const [graphOption, setGraphOption] = useState("ALL");
   const [stats, setStats] = useState({"applied": 0, "responded": 0, "rejected": 0, "interviewing": 0, "offer": 0})
 
   const updateGraphOption = (option) =>{
     setGraphOption(option);
+  }
+
+  const redirectAddApp =()=>{
+    window.location.href="/addapp.html";
   }
 
   useEffect(()=>{
@@ -41,11 +45,11 @@ function App() {
 
       <div className= "row2">
         <NavButton text="FORM FILLERS"></NavButton>
-        <AddAppButton></AddAppButton>
-        <NavButton text="ALL APPLICATIONS"></NavButton>
+        <AddAppButton redirect={redirectAddApp}></AddAppButton>
+        <NavButton text="ALL APPLICATIONS" redirect={redirectAddApp}></NavButton>
       </div>
     </div>
   );
 }
 
-export default App;
+export default AppIndex;

@@ -96,6 +96,7 @@ body {
     padding: 0;
     line-height: 130%;
 
+    position: relative;
     z-index: 1;
 
     list-style: none;
@@ -173,7 +174,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 gray;
 
-    z-index: -1;
+    position: relative;
+    z-index: 0;
 
 
     font-weight: bold;

@@ -1,0 +1,1 @@
+import{j as e,R as t,a as r}from"./global-DSDBlzvP.js";function o(){return e.jsx("div",{children:"Hello World"})}t.createRoot(document.getElementById("root")).render(e.jsx(r.StrictMode,{children:e.jsx(o,{})}));

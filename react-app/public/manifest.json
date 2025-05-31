@@ -5,6 +5,7 @@
     "action": {
         "default_popup": "index.html"
     },
+    "addapp_page": "addapp.html",
     "permissions": [
         "scripting"
     ],
