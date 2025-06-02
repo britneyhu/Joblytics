@@ -16,7 +16,7 @@ function AppIndex() {
     setGraphOption(option);
   }
 
-  const redirectAddApp =()=>{
+  const redirectToAddApp =()=>{
     window.location.href="/addapp.html";
   }
 
@@ -45,8 +45,8 @@ function AppIndex() {
 
       <div className= "row2">
         <NavButton text="FORM FILLERS"></NavButton>
-        <AddAppButton redirect={redirectAddApp}></AddAppButton>
-        <NavButton text="ALL APPLICATIONS" redirect={redirectAddApp}></NavButton>
+        <AddAppButton redirect={redirectToAddApp}></AddAppButton>
+        <NavButton text="ALL APPLICATIONS" redirect={redirectToAddApp}></NavButton>
       </div>
     </div>
   );

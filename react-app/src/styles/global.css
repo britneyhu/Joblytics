@@ -79,7 +79,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    
+    cursor: pointer;
 }
 
 .chevron-down {
@@ -95,6 +95,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 130%;
+
+    cursor: pointer;
 
     position: relative;
     z-index: 1;
@@ -150,6 +152,8 @@ body {
     border: none;
     border-radius: 100px;
     box-shadow: 0 4px 8px 0 gray;
+
+    cursor: pointer;
 }
 
 .plus-sign {
@@ -174,10 +178,34 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 gray;
 
+    cursor: pointer;
+
     position: relative;
     z-index: 0;
 
 
     font-weight: bold;
     font-size: 1rem;
+}
+
+.header-with-button {
+    position: relative;
+}
+
+.x-button {
+    background: #FFB1B1;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 4px 4px 0 gray;
+    margin: 10px;
+
+    cursor: pointer;
+
+    position: absolute;
+
+    font-size: 20px;
 }
