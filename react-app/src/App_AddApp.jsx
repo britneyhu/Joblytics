@@ -5,7 +5,7 @@ import './styles/AddApp.css';
 import Header from './components/Header';
 import AddForm from './components/AddForm';
 
-function AppAddApp() {
+function App_AddApp() {
     const [appData, setAppData] = useState({company: "", position: "", salary: "", location: "", link: "", jobStatus: "", jobDesc: ""});
 
     const redirectToIndex =()=>{
@@ -30,4 +30,4 @@ function AppAddApp() {
     )
 }
 
-export default AppAddApp;
+export default App_AddApp;

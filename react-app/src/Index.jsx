@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AppIndex from './AppIndex';
+import App_Index from './App_Index';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppIndex />
+    <App_Index />
   </React.StrictMode>
 );

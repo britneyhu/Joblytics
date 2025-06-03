@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AppAddApp from './AppAddApp';
+import App_AddApp from './App_AddApp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppAddApp />
+    <App_AddApp />
   </React.StrictMode>
 );

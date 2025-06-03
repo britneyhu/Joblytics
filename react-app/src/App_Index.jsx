@@ -8,7 +8,7 @@ import Stats from './components/Stats';
 import AddAppButton from './components/AddAppButton';
 import NavButton from './components/NavButton';
 
-function AppIndex() {
+function App_Index() {
   const [graphOption, setGraphOption] = useState("all");
   const [stats, setStats] = useState({"applied": 0, "responded": 0, "rejected": 0, "interviewing": 0, "offer": 0})
 
@@ -63,4 +63,4 @@ function AppIndex() {
   );
 }
 
-export default AppIndex;
+export default App_Index;

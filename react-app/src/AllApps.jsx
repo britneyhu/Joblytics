@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AppAllApps from './AppAllApps';
+import App_AllApps from './App_AllApps';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppAllApps />
+    <App_AllApps />
   </React.StrictMode>
 );

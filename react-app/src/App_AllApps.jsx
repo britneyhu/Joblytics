@@ -4,7 +4,7 @@ import './styles/global.css';
 import './styles/AllApps.css';
 import Header from './components/Header';
 
-function AppAllApps() { 
+function App_AllApps() { 
     const redirectToIndex =()=>{
         window.location.href="/index.html";
     }
@@ -33,4 +33,4 @@ function AppAllApps() {
     )
 }
 
-export default AppAllApps;
+export default App_AllApps;
