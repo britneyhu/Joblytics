@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AddForm({addApplication}){
+function AddForm({redirect}){
     const [formData, setFormData] = useState({company: "", position: "", salary: "", location: "", link: "", jobStatus: "", jobDesc: ""})
 
     const handleChange = (event) =>{
@@ -13,8 +13,8 @@ function AddForm({addApplication}){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        addApplication(formData);
         setFormData({company: "", position: "", salary: "", location: "", link: "", jobStatus: "", jobDesc: ""});
+        redirect();
     }
     
     return(
