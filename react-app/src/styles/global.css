@@ -62,14 +62,7 @@ form {
     border: 0.1rem solid black;
 }
 
-.dropdown {
-    width:125px;
-    height: 25px;
-
-    font-size: 0.8rem;
-}
-
-.dropdown-button {
+.dropdown-graph{
     background: #95D2B3;
 
     width:125px;
@@ -77,43 +70,19 @@ form {
 
     border: none;
     margin: 0;
-    padding-left: 5px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    cursor: pointer;
-}
-
-.chevron-down {
-    margin-right: 5px; 
-    margin-bottom: 4px;
-
-    font-size: 1.5rem;
-}
-
-.dropdown-menu {
-    background: #F1F8E8;
     
-    margin: 0;
-    padding: 0;
-    line-height: 130%;
-
     cursor: pointer;
 
-    position: relative;
-    z-index: 1;
-
-    list-style: none;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-.dropdown-option {
-    border-bottom: 1px solid black;
+.dropdown-graph:focus {
+    outline: none;
 }
 
-.dropdown-option-text {
-    margin-left: 5px;
+.dropdown-graph option {
+    background:#F1F8E8;
 }
 
 .stats {
