@@ -19,6 +19,10 @@ function AppIndex() {
     window.location.href="/addapp.html";
   }
 
+  const redirectToAllApps =()=>{
+    window.location.href="/allapps.html";
+  }
+
   useEffect(()=>{
     console.log(graphOption);
   }, [graphOption])
@@ -52,7 +56,7 @@ function AppIndex() {
       <div className= "row2">
         <NavButton text="FORM FILLERS"></NavButton>
         <AddAppButton redirect={redirectToAddApp}></AddAppButton>
-        <NavButton text="ALL APPLICATIONS" redirect={redirectToAddApp}></NavButton>
+        <NavButton text="ALL APPLICATIONS" redirect={redirectToAllApps}></NavButton>
       </div>
     </div>
   );
