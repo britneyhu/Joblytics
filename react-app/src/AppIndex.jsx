@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 import './styles/global.css';
+import './styles/index.css';
 import Header from './components/Header';
 import Graph from './components/Graph';
 import Stats from './components/Stats';
@@ -31,14 +32,14 @@ function AppIndex() {
     <div className="home-body">
       <Header></Header>
 
-      <div className="row1">
+      <div className="row row1">
 
-        <div className="col1">
+        <div className="col col1">
           
-          <div className="content-title">JASON'S ANALYTICS</div>
+          <div className="title">JASON'S ANALYTICS</div>
           <Graph></Graph>
-          <div className="dropdown">
-            <select className="dropdown-graph" name="graph-dropdown" value={graphOption} onChange={updateGraphOption}>
+          <div className="dropdown-container">
+            <select className="dropdown" name="dropdown-graph" value={graphOption} onChange={updateGraphOption}>
                 <option value="all">ALL</option>
                 <option value="applied">APPLIED</option>
                 <option value="responded">RESPONDED</option>
@@ -47,13 +48,13 @@ function AppIndex() {
           </div>
         </div>
 
-        <div className="col2">
+        <div className="col col2">
           <Stats stats={stats}></Stats>
         </div>
 
       </div>
 
-      <div className= "row2">
+      <div className= "row row2">
         <NavButton text="FORM FILLERS"></NavButton>
         <AddAppButton redirect={redirectToAddApp}></AddAppButton>
         <NavButton text="ALL APPLICATIONS" redirect={redirectToAllApps}></NavButton>

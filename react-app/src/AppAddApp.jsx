@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 import './styles/global.css';
+import './styles/AddApp.css';
 import Header from './components/Header';
 import AddForm from './components/AddForm';
 
@@ -21,7 +22,7 @@ function AppAddApp() {
                 <Header></Header>
             </div>
 
-            <div className="add-app-title">ADD APPLICATION</div>
+            <div className="title">ADD APPLICATION</div>
 
             <AddForm redirect={redirectToIndex}></AddForm>
             
