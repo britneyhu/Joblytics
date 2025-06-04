@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import './styles/global.css';
 import './styles/AllApps.css';
 import Header from './components/Header';
+import SearchBar from './components/SearchBar';
 
 function App_AllApps() { 
     const redirectToIndex =()=>{
@@ -27,17 +28,7 @@ function App_AllApps() {
                     
                     <div className="col col2">
                         <div>Dropdown</div>
-                        <div>
-                            <form>
-                                <label for="search-bar"></label>
-                                <div className="search-bar-container">
-                                    <input type="text" name="search-bar" className="search-bar"></input>
-                                    <button type="submit" className="search-submit">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        <SearchBar></SearchBar>
                     </div>
                 </div>
             </div>
