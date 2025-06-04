@@ -19,14 +19,26 @@ function App_AllApps() {
                 <Header></Header>
             </div>
 
-            <div className="add-app-row row1">
-                <div className="add-app-col col1">
-                    <div className="add-app-title">ALL APPLICATIONS</div>
-                </div>
-                
-                <div className="add-app-col col2">
-                    <div>Dropdown</div>
-                    <div>Search bar</div>
+            <div className="all-apps-body">
+                <div className="row row1">
+                    <div className="all-app-col col1">
+                        <div className="title">ALL APPLICATIONS</div>
+                    </div>
+                    
+                    <div className="col col2">
+                        <div>Dropdown</div>
+                        <div>
+                            <form>
+                                <label for="search-bar"></label>
+                                <div className="search-bar-container">
+                                    <input type="text" name="search-bar" className="search-bar"></input>
+                                    <button type="submit" className="search-submit">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
