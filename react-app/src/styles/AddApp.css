@@ -70,6 +70,8 @@
 
     font-weight: bold;
     font-size: 1rem;
+
+    margin-top: -10px;
 }
 
 .dropdown {
@@ -86,4 +88,31 @@
 
 .dropdown option {
     background: #55AD9B;
+}
+
+.salary-slider {
+  appearance: none;
+  
+}
+
+.salary-slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background:#F1F8E8;
+
+    height: 8px;
+    border-radius: 5px;
+}
+
+.salary-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: #55AD9B;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+.salary-text {
+    font-size: 10px;
 }

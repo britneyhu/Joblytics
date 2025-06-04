@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function AddForm({redirect}){
-    const [formData, setFormData] = useState({company: "", position: "", salary: "", location: "", link: "", jobStatus: "", jobDesc: ""})
+    const [formData, setFormData] = useState({company: "", position: "", salary: "0", location: "", link: "", jobStatus: "pending", jobDesc: ""})
 
     const handleChange = (event) =>{
         const{ name, value } = event.target;
@@ -13,7 +13,8 @@ function AddForm({redirect}){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        setFormData({company: "", position: "", salary: "", location: "", link: "", jobStatus: "", jobDesc: ""});
+        // console.log(formData);
+        setFormData({company: "", position: "", salary: "0", location: "", link: "", jobStatus: "pending", jobDesc: ""});
         redirect();
     }
     
@@ -33,7 +34,8 @@ function AddForm({redirect}){
             <div className="row row2">
                 <div className="item item3">
                     <label htmlFor="salary">SALARY</label>
-                    <input type="text" name="salary" value={formData.salary} onChange={handleChange}></input>
+                    <div className="salary-text">{formData.salary}K</div>
+                    <input className="salary-slider" type="range" min="0" max="200" name="salary" value={formData.salary} onChange={handleChange}></input>
                 </div>
 
                 <div className="item item4">
@@ -54,6 +56,7 @@ function AddForm({redirect}){
                         <option value="rejected">REJECTED</option>
                         <option value="interviewing">INTERVIEWING</option>
                         <option value="offer">OFFER</option>
+                        <option value="not-interested">NOT INTERESTED</option>
                     </select>
                 </div>
             </div>

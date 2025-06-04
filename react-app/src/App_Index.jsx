@@ -26,7 +26,7 @@ function App_Index() {
 
   useEffect(()=>{
     console.log(graphOption);
-  }, [graphOption])
+  }, [graphOption]);
 
   return (
     <div className="home-body">
