@@ -4,8 +4,15 @@ import './styles/global.css';
 import './styles/AllApps.css';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
+import ApplicationsGrid from './components/ApplicationsGrid';
 
 function App_AllApps() { 
+    const tempApps = [
+        { id: 1, date:"6/4", status: "pending", company: "Google", position: "Engineer", salary: "80k", link: "http://britneyhu.com", location: "Palo Alto", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu hendrerit eros. Etiam gravida tortor at risus consectetur, eu dapibus nulla dignissim. Duis id est facilisis diam blandit mattis. Morbi ac mollis felis. Morbi gravida arcu a mi tincidunt tempor ut at nibh. Maecenas iaculis sem ut metus tincidunt tincidunt. Vivamus tristique vel turpis eget aliquam. Ut bibendum tellus sit amet bibendum iaculis. Etiam nec risus id quam scelerisque placerat. Suspendisse nec magna sed dui sagittis sollicitudin vitae ut dolor. Praesent at lectus dictum ex auctor vestibulum eu sit amet est."},
+        { id: 2, date:"3/4", status: "pending", company: "Facebook", position: "Designer", salary: "100k", link: "http://britneyhu.com", location: "Fremont", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu hendrerit eros. Etiam gravida tortor at risus consectetur, eu dapibus nulla dignissim. Duis id est facilisis diam blandit mattis. Morbi ac mollis felis. Morbi gravida arcu a mi tincidunt tempor ut at nibh. Maecenas iaculis sem ut metus tincidunt tincidunt. Vivamus tristique vel turpis eget aliquam. Ut bibendum tellus sit amet bibendum iaculis. Etiam nec risus id quam scelerisque placerat. Suspendisse nec magna sed dui sagittis sollicitudin vitae ut dolor. Praesent at lectus dictum ex auctor vestibulum eu sit amet est."},
+        { id: 3, date:"6/7", status: "interviewing", company: "Amazon", position: "Manager", salary: "50k", link: "http://britneyhu.com", location: "Palo Alto", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu hendrerit eros. Etiam gravida tortor at risus consectetur, eu dapibus nulla dignissim. Duis id est facilisis diam blandit mattis. Morbi ac mollis felis. Morbi gravida arcu a mi tincidunt tempor ut at nibh. Maecenas iaculis sem ut metus tincidunt tincidunt. Vivamus tristique vel turpis eget aliquam. Ut bibendum tellus sit amet bibendum iaculis. Etiam nec risus id quam scelerisque placerat. Suspendisse nec magna sed dui sagittis sollicitudin vitae ut dolor. Praesent at lectus dictum ex auctor vestibulum eu sit amet est."},
+    ]
+
     const [sortOption, setSortOption] = useState("date");
 
     const updateSortOption = (event) =>{
@@ -51,6 +58,11 @@ function App_AllApps() {
                         <SearchBar></SearchBar>
                     </div>
                 </div>
+
+                <div className="row row2">
+                    <ApplicationsGrid applications={tempApps}></ApplicationsGrid>
+                </div>
+                
             </div>
         </div>
     )

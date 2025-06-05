@@ -1,5 +1,9 @@
 .all-apps-body {
     padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
@@ -16,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 100px;
 }
 
 .col.col2 {
@@ -77,4 +82,91 @@
 
 .search-bar-container {
     position: relative;
+}
+
+.row.row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid {
+    width: 600px;
+    height: 283px;
+
+    border: 0.1rem solid black;
+    margin-top: 10px;
+
+    overflow-x: auto;
+
+    display: grid;
+    grid-template-columns: 40px 50px 90px 90px 40px 40px 90px 80px 40px 40px;
+    
+    grid-auto-rows: 40px;
+}
+
+.grid-item.head {
+    background: #95D2B3;
+
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+}
+
+.grid-item {
+    background:#F1F8E8;
+    
+    border: 0.1rem solid black;
+    box-sizing: border-box;
+
+    overflow: auto;
+
+    font-size: 9px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item.desc {
+    font-size: 9px;
+    border: 0.1rem solid black;
+    box-sizing: border-box;
+
+    width: 80px;
+    height: 40px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: block;
+    padding-top: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    z-index: 10;
+    transition: height 0.2s ease;
+    cursor: pointer;
+}
+
+.grid-item.desc:hover {
+    background: #F1F8E8;
+
+    height: 150px;
+    width: 150px;
+
+    white-space: normal;
+    overflow-y: auto;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px;
+}
+
+.grid-item.link {
+    color: #55AD9B;
 }
