@@ -92,17 +92,21 @@
 
 .grid {
     width: 600px;
-    height: 283px;
 
     border: 0.1rem solid black;
-    margin-top: 10px;
+    
 
     overflow-x: auto;
 
     display: grid;
-    grid-template-columns: 40px 50px 90px 90px 40px 40px 90px 80px 40px 40px;
+    grid-template-columns: 30px 80px 80px 80px 40px 40px 90px 80px 40px 40px;
     
     grid-auto-rows: 40px;
+}
+
+.grid.head {
+    margin-top: 10px;
+    border-bottom: none;
 }
 
 .grid-item.head {
@@ -113,6 +117,8 @@
 
     display: flex;
     justify-content: center;
+
+    margin-bottom: 0;
 }
 
 .grid-item {
@@ -121,9 +127,15 @@
     border: 0.1rem solid black;
     box-sizing: border-box;
 
-    overflow: auto;
 
     font-size: 9px;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    position: relative;
     
     display: flex;
     justify-content: center;
@@ -131,40 +143,38 @@
 }
 
 .grid-item.desc {
-    font-size: 9px;
-    border: 0.1rem solid black;
-    box-sizing: border-box;
-
-    width: 80px;
-    height: 40px;
-    line-height: 1.2;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    display: block;
-    padding-top: 14px;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    z-index: 10;
-    transition: height 0.2s ease;
-    cursor: pointer;
+    position: relative;
 }
 
-.grid-item.desc:hover {
-    background: #F1F8E8;
+.popup.desc {
+    background-color: #F1F8E8;
 
-    height: 150px;
     width: 150px;
+    height: 150px;
 
-    white-space: normal;
+    border: 1px solid black ;
+    border-radius: 6px;
+    padding: 10px;
+
+    left: 400px;
+    top: 207px;
+    position: absolute;
+    z-index: 1;
+
     overflow-y: auto;
 
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 4px;
+    display: none;
+    color: black;
+    text-align: left;
+    font-size: 10px;
+}
+
+.grid-item.desc:hover + .popup.desc {
+    display: inline-block
+}
+
+.popup.desc:hover {
+    display: inline-block;
 }
 
 .grid-item.link {
