@@ -88,6 +88,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    overflow: auto;
+}
+
+.application-grid-container {
+    width: 600px;
+    height: 294px;
+
+    overflow: auto;
 }
 
 .grid-item.head {
@@ -96,12 +105,11 @@
 }
 
 .grid {
-    width: 600px;
+    width: 585px;
     height: 40px;
 
     display: flex;
     flex-direction: row;
-
 
     font-size: 11px;
 }
@@ -219,12 +227,24 @@
     width: 100px;
 }
 
+.grid-item.company, .grid-item.head.company {
+    width: 70px;
+}
+
+.grid-item.position, .grid-item.head.position {
+    width: 70px;
+}
+
 .grid-item.salary, .grid-item.head.salary {
     width: 55px;
 }
 
 .grid-item.link, .grid-item.head.link {
     width: 40px;
+}
+
+.grid-item.location, .grid-item.head.location {
+    width: 70px;
 }
 
 .grid-item.desc, .grid-item.head.desc {

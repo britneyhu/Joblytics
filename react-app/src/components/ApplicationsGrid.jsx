@@ -1,7 +1,7 @@
 function ApplicationsGrid({applications}){
     
     return(
-        <div>
+        <div className="application-grid-container">
             <div className="grid head">
                 <div className="grid-item head date">DATE</div>
                 <div className="grid-item head status">STATUS</div>
