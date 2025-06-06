@@ -3,45 +3,69 @@ function ApplicationsGrid({applications}){
     return(
         <div>
             <div className="grid head">
-                <div className="grid-item head">DATE</div>
-                <div className="grid-item head">STATUS</div>
-                <div className="grid-item head">COMPANY</div>
-                <div className="grid-item head">POSITION</div>
-                <div className="grid-item head">SALARY</div>
-                <div className="grid-item head">LINK</div>
-                <div className="grid-item head">LOCATION</div>
-                <div className="grid-item head">DESC</div>
-                <div className="grid-item head">EDIT</div>
-                <div className="grid-item head">DELETE</div>
-            </div>
-
-            <div className="grid">
-                <div className="grid-item">6/4</div>
-                <div className="grid-item">PENDING</div>
-                <div className="grid-item">Google</div>
-                <div className="grid-item">SWE</div>
-                <div className="grid-item">80k</div>
-                <a className="grid-item link" href="">LINK</a>
-                <div className="grid-item">Mountain View</div>
-                <div className="grid-item desc">Read</div>
-                <span className="popup desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu hendrerit eros. Etiam gravida tortor at risus consectetur, eu dapibus nulla dignissim. Duis id est facilisis diam blandit mattis. Morbi ac mollis felis. Morbi gravida arcu a mi tincidunt tempor ut at nibh. Maecenas iaculis sem ut metus tincidunt tincidunt. Vivamus tristique vel turpis eget aliquam. Ut bibendum tellus sit amet bibendum iaculis. Etiam nec risus id quam scelerisque placerat. Suspendisse nec magna sed dui sagittis sollicitudin vitae ut dolor. Praesent at lectus dictum ex auctor vestibulum eu sit amet est.</span>
-                <div className="grid-item">/</div>
-                <div className="grid-item">0</div>
+                <div className="grid-item head date">DATE</div>
+                <div className="grid-item head status">STATUS</div>
+                <div className="grid-item head company">COMPANY</div>
+                <div className="grid-item head position">POSITION</div>
+                <div className="grid-item head salary">SALARY</div>
+                <div className="grid-item head link">LINK</div>
+                <div className="grid-item head location">LOCATION</div>
+                <div className="grid-item head desc">DESC</div>
+                <div className="grid-item head edit">EDIT</div>
+                <div className="grid-item head delete">DELETE</div>
             </div>
 
             {applications.map(app => (
                 <div className="grid" key={app.id}>
-                    <div className="grid-item">{app.date}</div>
-                    <div className="grid-item">{app.status}</div>
-                    <div className="grid-item">{app.company}</div>
-                    <div className="grid-item">{app.position}</div>
-                    <div className="grid-item">{app.salary}</div>
-                    <a className="grid-item link" href={app.link}>LINK</a>
-                    <div className="grid-item">{app.location}</div>
-                    <div className="grid-item desc">Read</div>
-                    <span className="popup desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu hendrerit eros. Etiam gravida tortor at risus consectetur, eu dapibus nulla dignissim. Duis id est facilisis diam blandit mattis. Morbi ac mollis felis. Morbi gravida arcu a mi tincidunt tempor ut at nibh. Maecenas iaculis sem ut metus tincidunt tincidunt. Vivamus tristique vel turpis eget aliquam. Ut bibendum tellus sit amet bibendum iaculis. Etiam nec risus id quam scelerisque placerat. Suspendisse nec magna sed dui sagittis sollicitudin vitae ut dolor. Praesent at lectus dictum ex auctor vestibulum eu sit amet est.</span>
-                    <div className="grid-item">/</div>
-                    <div className="grid-item">0</div>
+                    <div className="grid-item date">
+                        {app.date}
+                    </div>
+
+                    <div className="grid-item status">
+                        {app.status}
+                    </div>
+
+                    <div className="grid-item company">
+                        <div className="grid-item-text">
+                            {app.company}
+                        </div>
+                        <span className="popup company">{app.company}</span>
+                    </div>
+
+                    <div className="grid-item position">
+                        <div className="grid-item-text">
+                            {app.position}
+                        </div>
+                        <span className="popup position">{app.position}</span>
+                    </div>
+
+                    <div className="grid-item salary">
+                        {app.salary}    
+                    </div>
+
+                    <a className="grid-item link" href={app.link}>
+                        LINK
+                    </a>
+
+                    <div className="grid-item location">
+                        <div className="grid-item-text">
+                            {app.location}
+                        </div>
+                        <span className="popup location">{app.location}</span>
+                    </div>
+
+                    <div className="grid-item desc">
+                        Read
+                        <span className="popup desc">{app.description}</span>
+                    </div>
+
+                    <div className="grid-item edit">
+                        /
+                    </div>
+
+                    <div className="grid-item delete">
+                        0
+                    </div>
                 </div>
 
             ))}
