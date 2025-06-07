@@ -1,4 +1,15 @@
+import React, {useState} from "react";
+
 function ApplicationsGrid({applications}){
+    const [showDelete, setShowDelete] = useState(false);
+
+    const toggleDelete = (off) =>{
+        setShowDelete(prev => !prev);
+
+        if(off){
+            window.location.href="/allapps.html"
+        }
+    }
     
     return(
         <div className="application-grid-container">
@@ -60,15 +71,36 @@ function ApplicationsGrid({applications}){
                     </div>
 
                     <div className="grid-item edit">
-                        /
+                        <button className="edit-button">
+                            <i className="fa-solid fa-pen-to-square"></i>
+                        </button>
                     </div>
 
                     <div className="grid-item delete">
-                        0
+                        <button className="delete-button" onClick={()=> toggleDelete(false)}>
+                            <i className="fa-solid fa-trash"></i>
+                        </button>
                     </div>
                 </div>
 
             ))}
+
+            {showDelete && (
+                <div className="delete-popup-container">
+                    <button className="x-button" onClick={()=> toggleDelete(true)}>
+                        <i className="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <div className="delete-text">
+                        Are you sure you want to delete this application?
+                    </div>
+
+                    <button className="confirm-button" onClick={()=> toggleDelete(true)}>
+                        CONFIRM
+                    </button>
+
+                </div>
+            )}
 
                 
             
