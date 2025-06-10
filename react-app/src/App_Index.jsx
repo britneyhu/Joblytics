@@ -10,7 +10,7 @@ import NavButton from './components/NavButton';
 
 function App_Index() {
   const [graphOption, setGraphOption] = useState("all");
-  const [stats, setStats] = useState({"applied": 0, "responded": 0, "rejected": 0, "interviewing": 0, "offer": 0})
+  const [stats, setStats] = useState({"applied": 0, "responded": 0, "rejected": 0, "interviewing": 0, "offer": 0});
 
   const updateGraphOption = (event) =>{
     setGraphOption(event.target.value);

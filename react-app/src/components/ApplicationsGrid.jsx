@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
-function ApplicationsGrid({applications}){
+function ApplicationsGrid(){
     const [showPopup, setShowPopup] = useState(false);
 
     const [deleteItem, setDeleteItem] = useState();
+
+    const [apps, setApps] = useState([]);
  
     const togglePopup = (action, id) =>{
         if(action == "open"){
@@ -17,14 +19,33 @@ function ApplicationsGrid({applications}){
         }
 
         else if(action == "delete"){
-            console.log(deleteItem);
+            localStorage.removeItem(deleteItem);
             window.location.href="/allapps.html"
         }
     }
 
-    const editApp = (app) => {
-        window.location.href="/index.html";
+    const editApp = (id) => {
+        localStorage.setItem("editApp", id);
+        window.location.href="/editapp.html";
     }
+
+    useEffect(()=> {
+        let numApps = localStorage.getItem("numApps");
+
+        const loadedApps = [];
+        for(let i = 1; i <= numApps; i++){
+            const item = localStorage.getItem(i);
+
+            if(item) {
+                try {
+                    loadedApps.push(JSON.parse(item));
+                } catch(e){
+                    console.error("Failed to parse localStorage item:", item);
+                }
+            }
+        }
+        setApps(loadedApps);
+    }, []);
     
     return(
         <div className="application-grid-container">
@@ -41,7 +62,7 @@ function ApplicationsGrid({applications}){
                 <div className="grid-item head delete">DELETE</div>
             </div>
 
-            {applications.map(app => (
+            {apps.map((app) => (
                 <div className="grid" key={app.id}>
                     <div className="grid-item date">
                         {app.date}

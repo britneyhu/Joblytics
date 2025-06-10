@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-function AddForm({redirect}){
-    const todaysDate = new Date().toISOString().split("T")[0];
+function EditForm({id, redirect}){
 
-    const [formData, setFormData] = useState({id: parseInt(localStorage.getItem("numApps")) + 1, date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""})
+    const [formData, setFormData] = useState({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", jobStatus: "pending", jobDesc: ""})
 
     const handleChange = (event) =>{
         const{ name, value } = event.target;
@@ -15,23 +14,9 @@ function AddForm({redirect}){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-
-        if(isNaN(parseInt(localStorage.getItem("numApps")))){
-            localStorage.setItem("numApps", 0);
-            
-        }
-
-        let numApps = parseInt(localStorage.getItem("numApps"));
-
-        formData.id = numApps+1;
-
-        localStorage.setItem(numApps+1, JSON.stringify(formData));
-        localStorage.setItem("numApps", numApps+1);
-
-        console.log(localStorage.getItem("numApps"));
-
-        setFormData({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""});
-        redirect();
+        console.log(formData);
+        setFormData({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", jobStatus: "pending", jobDesc: ""});
+        // redirect();
     }
     
     return(
@@ -74,7 +59,7 @@ function AddForm({redirect}){
 
                 <div className="item item5">
                     <label htmlFor="jobStatus">STATUS</label>
-                    <select className="dropdown" name="status" value={formData.status} onChange={handleChange}>
+                    <select className="dropdown" name="jobStatus" value={formData.jobStatus} onChange={handleChange}>
                         <option value="pending">PENDING</option>
                         <option value="rejected">REJECTED</option>
                         <option value="interviewing">INTERVIEWING</option>
@@ -86,7 +71,7 @@ function AddForm({redirect}){
 
             <div className="item item6">
                 <label htmlFor="job-desc">JOB DESCRIPTION</label>
-                <textarea name="description" value={formData.description} onChange={handleChange}></textarea>
+                <textarea name="jobDesc" value={formData.jobDesc} onChange={handleChange}></textarea>
             </div>
 
             <div className="submit">
@@ -96,4 +81,4 @@ function AddForm({redirect}){
     );
 }
 
-export default AddForm;
+export default EditForm;

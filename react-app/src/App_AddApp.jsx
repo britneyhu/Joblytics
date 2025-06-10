@@ -6,8 +6,6 @@ import Header from './components/Header';
 import AddForm from './components/AddForm';
 
 function App_AddApp() {
-    const [appData, setAppData] = useState({company: "", position: "", salary: "", location: "", link: "", jobStatus: "", jobDesc: ""});
-
     const redirectToIndex =()=>{
         window.location.href="/index.html";
     }
