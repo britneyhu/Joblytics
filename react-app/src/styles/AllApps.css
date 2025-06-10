@@ -155,13 +155,13 @@
     background: #F1F8E8;
 
     width: 150px;
-    height: 200px;
+    max-height: 200px;
 
     border: 0.1rem solid black;
     padding: 5px;
 
     visibility: hidden;
-    overflow: auto;
+    overflow-y: auto;
 
     top: 40px;
     position: absolute;
@@ -171,6 +171,8 @@
     text-transform: none;
     color: black;
     font-weight: normal;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .grid-item.company .grid-item.position, .grid-item.location {

@@ -87,10 +87,10 @@ function ApplicationsGrid(){
                     </div>
 
                     <div className="grid-item salary">
-                        {app.salary}    
+                        {app.salary}k    
                     </div>
 
-                    <a className="grid-item link" href={app.link}>
+                    <a className="grid-item link" target="_blank" href={app.link}>
                         LINK
                     </a>
 

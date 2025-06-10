@@ -26,7 +26,7 @@ function App_EditApp() {
 
             <div className="title">EDIT APPLICATION</div>
 
-            <EditForm id={parseInt(localStorage.getItem("editApp"))} redirect={redirectToAllApps}></EditForm>
+            <EditForm redirect={redirectToAllApps}></EditForm>
             
         </div>
     )

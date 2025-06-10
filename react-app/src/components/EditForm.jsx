@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 
-function EditForm({id, redirect}){
+function EditForm({redirect}){
+    const id = localStorage.getItem("editApp");
+    const app = JSON.parse(localStorage.getItem(id));
+    console.log(app.description);
 
-    const [formData, setFormData] = useState({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", jobStatus: "pending", jobDesc: ""})
+    const [formData, setFormData] = useState({date: app.date, company: app.company, position: app.position, salary: app.salary, location: app.location, link: app.id, status: app.status, description: app.description})
 
     const handleChange = (event) =>{
         const{ name, value } = event.target;
@@ -14,9 +17,12 @@ function EditForm({id, redirect}){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        console.log(formData);
-        setFormData({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", jobStatus: "pending", jobDesc: ""});
-        // redirect();
+
+        localStorage.setItem(id, JSON.stringify(formData));
+
+        localStorage.setItem("editApp", 0);
+
+        redirect();
     }
     
     return(
@@ -59,7 +65,7 @@ function EditForm({id, redirect}){
 
                 <div className="item item5">
                     <label htmlFor="jobStatus">STATUS</label>
-                    <select className="dropdown" name="jobStatus" value={formData.jobStatus} onChange={handleChange}>
+                    <select className="dropdown" name="status" value={formData.status} onChange={handleChange}>
                         <option value="pending">PENDING</option>
                         <option value="rejected">REJECTED</option>
                         <option value="interviewing">INTERVIEWING</option>
@@ -71,7 +77,7 @@ function EditForm({id, redirect}){
 
             <div className="item item6">
                 <label htmlFor="job-desc">JOB DESCRIPTION</label>
-                <textarea name="jobDesc" value={formData.jobDesc} onChange={handleChange}></textarea>
+                <textarea name="description" value={formData.description} onChange={handleChange}></textarea>
             </div>
 
             <div className="submit">
