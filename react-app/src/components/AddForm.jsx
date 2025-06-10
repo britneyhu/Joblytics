@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
 function AddForm({redirect}){
-    const [formData, setFormData] = useState({company: "", position: "", salary: "0", location: "", link: "", jobStatus: "pending", jobDesc: ""})
+    const todaysDate = new Date().toISOString().split("T")[0];;
+
+    const [formData, setFormData] = useState({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", jobStatus: "pending", jobDesc: ""})
 
     const handleChange = (event) =>{
         const{ name, value } = event.target;
@@ -13,17 +15,24 @@ function AddForm({redirect}){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        // console.log(formData);
-        setFormData({company: "", position: "", salary: "0", location: "", link: "", jobStatus: "pending", jobDesc: ""});
-        redirect();
+        console.log(formData);
+        setFormData({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", jobStatus: "pending", jobDesc: ""});
+        // redirect();
     }
     
     return(
         <form className="add-app-form" onSubmit={handleSubmit}>
             <div className="row row1">
                 <div className="item item1">
+                    <label htmlFor="date">DATE</label>
+                    <input type="date" name="date" value={formData.date} onChange={handleChange}></input>
+                </div>
+            </div>
+
+            <div className="row row1">
+                <div className="item item1">
                     <label htmlFor="company">COMPANY</label>
-                    <input type="text" name="company" value={formData.company} onChange={handleChange}></input>
+                    <input className="date-picker" type="text" name="company" value={formData.company} onChange={handleChange}></input>
                 </div>
                 
                 <div className="item item2">

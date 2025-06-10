@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         home: resolve(__dirname, './index.html'),
         addApp: resolve(__dirname, './addapp.html'),
+        editApp: resolve(__dirname, './editapp.html'),
         allApps: resolve(__dirname, './allapps.html'),
       }
     }

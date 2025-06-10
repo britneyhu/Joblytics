@@ -1,14 +1,29 @@
 import React, {useState} from "react";
 
 function ApplicationsGrid({applications}){
-    const [showDelete, setShowDelete] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
-    const toggleDelete = (off) =>{
-        setShowDelete(prev => !prev);
+    const [deleteItem, setDeleteItem] = useState();
+ 
+    const togglePopup = (action, id) =>{
+        if(action == "open"){
+            setShowPopup(true);
+            setDeleteItem(id);
+        }
 
-        if(off){
+        else if(action == "close"){
+            setShowPopup(false);
+            setDeleteItem();
+        }
+
+        else if(action == "delete"){
+            console.log(deleteItem);
             window.location.href="/allapps.html"
         }
+    }
+
+    const editApp = (app) => {
+        window.location.href="/index.html";
     }
     
     return(
@@ -71,13 +86,13 @@ function ApplicationsGrid({applications}){
                     </div>
 
                     <div className="grid-item edit">
-                        <button className="edit-button">
+                        <button className="edit-button" onClick={()=> editApp(app.id)}>
                             <i className="fa-solid fa-pen-to-square"></i>
                         </button>
                     </div>
 
                     <div className="grid-item delete">
-                        <button className="delete-button" onClick={()=> toggleDelete(false)}>
+                        <button className="delete-button" onClick={()=> togglePopup("open", app.id)}>
                             <i className="fa-solid fa-trash"></i>
                         </button>
                     </div>
@@ -85,9 +100,9 @@ function ApplicationsGrid({applications}){
 
             ))}
 
-            {showDelete && (
+            {showPopup && (
                 <div className="delete-popup-container">
-                    <button className="x-button" onClick={()=> toggleDelete(true)}>
+                    <button className="x-button" onClick={()=> togglePopup("close")}>
                         <i className="fa-solid fa-xmark"></i>
                     </button>
 
@@ -95,7 +110,7 @@ function ApplicationsGrid({applications}){
                         Are you sure you want to delete this application?
                     </div>
 
-                    <button className="confirm-button" onClick={()=> toggleDelete(true)}>
+                    <button className="confirm-button" onClick={()=> togglePopup("delete")}>
                         CONFIRM
                     </button>
 
