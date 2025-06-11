@@ -18,7 +18,7 @@ function App_EditApp() {
     return(
         <div>
             <div className="header-with-button">
-                <button className="x-button" onClick={()=> redirectToIndex()}>
+                <button className="x-button" onClick={()=> redirectToAllApps()}>
                     <i className="fa-solid fa-xmark"></i>
                 </button>
                 <Header></Header>

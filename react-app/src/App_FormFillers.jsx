@@ -33,18 +33,6 @@ function App_FormFillers() {
             </div>
 
             <div className="all-apps-body">
-                <div className="row row1">
-                    <div className="all-app-col col1">
-                        <div className="title">FORM FILLERS</div>
-                    </div>
-                    
-                    <div className="col col2"> 
-                        <button className="add-field">
-                            <i className=" plus-sign fa-solid fa-plus"></i>
-                            ADD FIELD
-                        </button>
-                    </div>
-                </div>
 
                 <div className="row row2">
                     <FormFillersGrid></FormFillersGrid>
