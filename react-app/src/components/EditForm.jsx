@@ -5,7 +5,7 @@ function EditForm({redirect}){
     const app = JSON.parse(localStorage.getItem(id));
     console.log(app.description);
 
-    const [formData, setFormData] = useState({date: app.date, company: app.company, position: app.position, salary: app.salary, location: app.location, link: app.id, status: app.status, description: app.description})
+    const [formData, setFormData] = useState({id: app.id, date: app.date, company: app.company, position: app.position, salary: app.salary, location: app.location, link: app.id, status: app.status, description: app.description})
 
     const handleChange = (event) =>{
         const{ name, value } = event.target;
