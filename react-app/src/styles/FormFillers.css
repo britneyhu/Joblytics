@@ -1,0 +1,163 @@
+.all-apps-body {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.row.row1 {
+    display: flex;
+    align-items: center;
+    gap: 300px;
+    margin-bottom: 10px;
+}
+
+.add-field {
+    background: #95D2B3;
+
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 gray;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.plus-sign {
+    margin: 2.5px;
+}
+
+.row.row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: auto;
+}
+
+.application-grid-container {
+    width: 600px;
+    height: 294px;
+
+    overflow: auto;
+}
+
+.grid-item.head {
+    background: #55AD9B;
+    color: white;
+}
+
+.grid {
+    width: 600px;
+    height: 40px;
+
+    display: flex;
+    flex-direction: row;
+
+    font-size: 11px;
+}
+
+.grid-item {
+    background: #F1F8E8;
+
+    height: 35px;
+
+    border: 0.1rem solid black;
+    padding: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+}
+
+.grid-item.field {
+    width: 200px;
+}
+
+.grid-item.response {
+    width: 320px;
+}
+
+.grid-item.edit {
+    width: 40px;
+}
+
+.grid-item.delete {
+    width: 40px;
+}
+
+.edit-button, .delete-button {
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.delete-popup-container {
+    background: #95D2B3;
+
+    width: 200px;
+    height: 100px;
+
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;;
+
+    position: absolute;
+    top: 150px;
+    left: 150px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.x-button {
+    top: 0px;
+    left: 0px;
+}
+
+.confirm-button {
+    background: #55AD9B;
+    
+    width: 120px;
+    height: 30px;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 gray;
+    padding: 10px;
+    margin-top: -10px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    font-weight: bold;
+    font-size: 1rem;
+}

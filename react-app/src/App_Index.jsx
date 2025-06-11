@@ -24,6 +24,11 @@ function App_Index() {
     window.location.href="/allapps.html";
   }
 
+  const redirectToFormFillers =()=>{
+    window.location.href="/formfillers.html";
+  }
+
+
   useEffect(()=>{
     console.log(graphOption);
   }, [graphOption]);
@@ -55,7 +60,7 @@ function App_Index() {
       </div>
 
       <div className= "row row2">
-        <NavButton text="FORM FILLERS"></NavButton>
+        <NavButton text="FORM FILLERS" redirect={redirectToFormFillers}></NavButton>
         <AddAppButton redirect={redirectToAddApp}></AddAppButton>
         <NavButton text="ALL APPLICATIONS" redirect={redirectToAllApps}></NavButton>
       </div>

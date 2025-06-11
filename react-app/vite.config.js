@@ -12,6 +12,7 @@ export default defineConfig({
         addApp: resolve(__dirname, './addapp.html'),
         editApp: resolve(__dirname, './editapp.html'),
         allApps: resolve(__dirname, './allapps.html'),
+        formFillers: resolve(__dirname, './formfillers.html'),
       }
     }
   }
