@@ -3,8 +3,11 @@ import React, {useState, useEffect} from "react";
 function FormFillersGrid(){
     const [fillerData, setFillerData] = useState({id: 0, field: "", response: ""});
     const [showAddForm, setShowAddForm] = useState(false);
+    const [showEditForm, setShowEditForm] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
     const [apps, setApps] = useState([]);
+    const [deleteItem, setDeleteItem] = useState();
+    const [editForm, setEditForm] = useState({id: 0, field: "", response: ""});
 
     const toggleAddForm = (action, id) =>{
         if(action == "open"){
@@ -14,6 +17,19 @@ function FormFillersGrid(){
         else if(action == "close"){
             setShowAddForm(false);
         }
+    }
+
+    const toggleEditForm = (action, item) =>{
+        if(action == "open"){
+            setShowEditForm(true);
+            setEditForm(item);
+        }
+
+        else if(action == "close"){
+            setShowEditForm(false);
+            setEditForm();
+        }
+        
     }
  
     const togglePopup = (action, id) =>{
@@ -28,14 +44,23 @@ function FormFillersGrid(){
         }
 
         else if(action == "delete"){
-            // localStorage.removeItem(deleteItem);
-            // window.location.href="/allapps.html"
+            localStorage.removeItem(deleteItem);
+            setShowPopup(false);
+            window.location.href="/formfillers.html"
         }
     }
 
     const handleChange = (event)=>{
         const{ name, value } = event.target;
         setFillerData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    }
+
+    const handleEditChange = (event)=>{
+        const{ name, value } = event.target;
+        setEditForm(prev => ({
             ...prev,
             [name]: value
         }));
@@ -56,19 +81,27 @@ function FormFillersGrid(){
         localStorage.setItem(fillerData.id, JSON.stringify(fillerData));
         localStorage.setItem("numFillers", numFillers+1);
 
-        console.log(localStorage.getItem("numFillers"), localStorage.getItem(fillerData.id));
-
         setFillerData({id: 0, field: "", response: ""});
 
-        // window.location.href="/formfillers.html"
+        window.location.href="/formfillers.html"
+    }
+
+    const handleEditSubmit = (event)=>{
+        event.preventDefault();
+
+        localStorage.setItem(editForm.id, JSON.stringify(editForm));
+
+        setEditForm({id: 0, field: "", response: ""});
+
+        window.location.href="/formfillers.html"
     }
 
     useEffect(()=> {
-        let numApps = localStorage.getItem("numApps");
+        let numFillers = localStorage.getItem("numFillers");
 
         const loadedApps = [];
-        for(let i = 1; i <= numApps; i++){
-            const item = localStorage.getItem(i);
+        for(let i = 1; i <= numFillers; i++){
+            const item = localStorage.getItem("filler-"+i);
 
             if(item) {
                 try {
@@ -107,15 +140,15 @@ function FormFillersGrid(){
                 {apps.map((app) => (
                     <div className="grid" key={app.id}>
                         <div className="grid-item field">
-                            {app.date}
+                            {app.field}
                         </div>
 
                         <div className="grid-item response">
-                            {app.status}
+                            {app.response}
                         </div>
 
                         <div className="grid-item edit">
-                            <button className="edit-button" onClick={()=> toggleAddForm("open", app.id)}>
+                            <button className="edit-button" onClick={()=> toggleEditForm("open", app)}>
                                 <i className="fa-solid fa-pen-to-square"></i>
                             </button>
                         </div>
@@ -144,6 +177,30 @@ function FormFillersGrid(){
                             <div className="input">
                                 <label htmlFor="response">RESPONSE</label>
                                 <input type="text" name="response" onChange={handleChange}></input>
+                            </div>
+
+                            <input className="confirm-button" type="submit" value="ADD">
+                            </input>
+                        </form>
+
+                    </div>
+                )}
+
+                {showEditForm && (
+                    <div className="add-popup-container">
+                        <button className="x-button" onClick={()=> toggleEditForm("close")}>
+                            <i className="fa-solid fa-xmark"></i>
+                        </button>
+
+                        <form onSubmit={handleEditSubmit}>
+                            <div className="input">
+                                <label htmlFor="field">FIELD</label>
+                                <input type="text" name="field" value={editForm.field} onChange={handleEditChange}></input>
+                            </div>
+                            
+                            <div className="input">
+                                <label htmlFor="response">RESPONSE</label>
+                                <input type="text" name="response" value={editForm.response} onChange={handleEditChange}></input>
                             </div>
 
                             <input className="confirm-button" type="submit" value="ADD">

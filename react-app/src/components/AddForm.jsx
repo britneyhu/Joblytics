@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function AddForm({redirect}){
     const todaysDate = new Date().toISOString().split("T")[0];
 
-    const [formData, setFormData] = useState({id: parseInt(localStorage.getItem("numApps")) + 1, date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""})
+    const [formData, setFormData] = useState({id: "application-"+parseInt(localStorage.getItem("numApps")) + 1, date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""})
 
     const handleChange = (event) =>{
         const{ name, value } = event.target;
@@ -23,12 +23,12 @@ function AddForm({redirect}){
 
         let numApps = parseInt(localStorage.getItem("numApps"));
 
-        formData.id = numApps+1;
+        formData.id = "application-"+(numApps+1);
 
-        localStorage.setItem(numApps+1, JSON.stringify(formData));
+        localStorage.setItem(formData.id, JSON.stringify(formData));
         localStorage.setItem("numApps", numApps+1);
 
-        setFormData({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""});
+        setFormData({id: numApps+1, date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""});
         redirect();
     }
     

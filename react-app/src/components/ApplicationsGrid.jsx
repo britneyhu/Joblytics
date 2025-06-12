@@ -34,7 +34,7 @@ function ApplicationsGrid(){
 
         const loadedApps = [];
         for(let i = 1; i <= numApps; i++){
-            const item = localStorage.getItem(i);
+            const item = localStorage.getItem("application-"+i);
 
             if(item) {
                 try {
