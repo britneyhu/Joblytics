@@ -28,8 +28,6 @@ function AddForm({redirect}){
         localStorage.setItem(numApps+1, JSON.stringify(formData));
         localStorage.setItem("numApps", numApps+1);
 
-        console.log(localStorage.getItem("numApps"));
-
         setFormData({date: todaysDate, company: "", position: "", salary: 0, location: "", link: "", status: "pending", description: ""});
         redirect();
     }

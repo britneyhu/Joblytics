@@ -114,6 +114,66 @@
     cursor: pointer;
 }
 
+.add-popup-container {
+    background: #95D2B3;
+
+    width: 200px;
+    height: 100px;
+
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    position: absolute;
+    top: 150px;
+    left: 150px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input input {
+    background: #F1F8E8;
+    width: 200px;
+
+    border: 0.1rem solid gray;
+    border-radius: 3px;
+}
+
+.input input:focus, .input textarea:focus{
+    outline: none;
+}
+
+.input {
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.confirm-button {
+    background: #55AD9B;
+    
+    width: 120px;
+    height: 30px;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 gray;
+    padding-top: 8px;
+    padding-bottom: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+    font-size: 1rem;
+}
+
 .delete-popup-container {
     background: #95D2B3;
 
@@ -140,26 +200,4 @@
 .x-button {
     top: 0px;
     left: 0px;
-}
-
-.confirm-button {
-    background: #55AD9B;
-    
-    width: 120px;
-    height: 30px;
-
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 gray;
-    padding: 10px;
-    margin-top: -10px;
-
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items:center;
-
-    font-weight: bold;
-    font-size: 1rem;
 }

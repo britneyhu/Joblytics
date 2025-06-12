@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
 
 function FormFillersGrid(){
+    const [fillerData, setFillerData] = useState({id: 0, field: "", response: ""});
     const [showAddForm, setShowAddForm] = useState(false);
-
     const [showPopup, setShowPopup] = useState(false);
-
     const [apps, setApps] = useState([]);
 
     const toggleAddForm = (action, id) =>{
@@ -34,8 +33,34 @@ function FormFillersGrid(){
         }
     }
 
-    const addFiller = (event)=>{
+    const handleChange = (event)=>{
+        const{ name, value } = event.target;
+        setFillerData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    }
+
+    const handleSubmit = (event)=>{
         event.preventDefault();
+
+        if(isNaN(parseInt(localStorage.getItem("numFillers")))){
+            localStorage.setItem("numFillers", 0);
+            
+        }
+
+        let numFillers = parseInt(localStorage.getItem("numFillers"));
+
+        fillerData.id = "filler-" + (numFillers+1);
+
+        localStorage.setItem(fillerData.id, JSON.stringify(fillerData));
+        localStorage.setItem("numFillers", numFillers+1);
+
+        console.log(localStorage.getItem("numFillers"), localStorage.getItem(fillerData.id));
+
+        setFillerData({id: 0, field: "", response: ""});
+
+        // window.location.href="/formfillers.html"
     }
 
     useEffect(()=> {
@@ -105,17 +130,21 @@ function FormFillersGrid(){
                 ))}
 
                 {showAddForm && (
-                    <div className="delete-popup-container">
+                    <div className="add-popup-container">
                         <button className="x-button" onClick={()=> toggleAddForm("close")}>
                             <i className="fa-solid fa-xmark"></i>
                         </button>
 
-                        <form onSubmit={addFiller}>
-                            <label htmlFor="field">FIELD</label>
-                            <input type="text"></input>
-
-                            <label htmlFor="response">RESPONSE</label>
-                            <input type="text"></input>
+                        <form onSubmit={handleSubmit}>
+                            <div className="input">
+                                <label htmlFor="field">FIELD</label>
+                                <input type="text" name="field" onChange={handleChange}></input>
+                            </div>
+                            
+                            <div className="input">
+                                <label htmlFor="response">RESPONSE</label>
+                                <input type="text" name="response" onChange={handleChange}></input>
+                            </div>
 
                             <input className="confirm-button" type="submit" value="ADD">
                             </input>
